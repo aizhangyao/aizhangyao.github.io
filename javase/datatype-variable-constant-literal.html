@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="generator" content="Hexo 4.2.1"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>数据类型-变量-常量-字面量 - ZhangYao&#039;s Blog</title><meta description="【摘要】Java语言是静态类型的，也就是说所有变量和表达式的类型在编译时就已经完全确定。"><meta property="og:type" content="blog"><meta property="og:title" content="数据类型-变量-常量-字面量"><meta property="og:url" content="http://www.aizhangyao.com/javase/datatype-variable-constant-literal.html"><meta property="og:site_name" content="ZhangYao&#039;s Blog"><meta property="og:description" content="【摘要】Java语言是静态类型的，也就是说所有变量和表达式的类型在编译时就已经完全确定。"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="http://www.aizhangyao.com/gallery/images/javase/datatype-variable-constant-literal/cover.png"><meta property="article:published_time" content="2019-10-12T10:03:19.000Z"><meta property="article:modified_time" content="2020-11-27T11:07:57.433Z"><meta property="article:author" content="ZhangYao"><meta property="article:tag" content="JavaSE"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/gallery/images/javase/datatype-variable-constant-literal/cover.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://www.aizhangyao.com/javase/datatype-variable-constant-literal.html"},"headline":"ZhangYao's Blog","image":["http://www.aizhangyao.com/gallery/images/javase/datatype-variable-constant-literal/cover.png"],"datePublished":"2019-10-12T10:03:19.000Z","dateModified":"2020-11-27T11:07:57.433Z","author":{"@type":"Person","name":"ZhangYao"},"description":"【摘要】Java语言是静态类型的，也就是说所有变量和表达式的类型在编译时就已经完全确定。"}</script><link rel="canonical" href="http://www.aizhangyao.com/javase/datatype-variable-constant-literal.html"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/5.12.0/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"><link rel="stylesheet" href="https://fonts.loli.net/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.8/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.7.0/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="ZhangYao&#039;s Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/aizhangyao"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="thumbnail" src="/gallery/images/javase/datatype-variable-constant-literal/cover.png" alt="数据类型-变量-常量-字面量"></span></div><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2019-10-12T10:03:19.000Z" title="2019-10-12T10:03:19.000Z">2019-10-12</time><span class="level-item"><a class="link-muted" href="/categories/JavaSE/">JavaSE</a></span><span class="level-item">9 分钟 读完 (大约 1304 个字)</span><span class="level-item" id="busuanzi_container_page_pv"><i class="far fa-eye"></i>&nbsp;&nbsp;<span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">数据类型-变量-常量-字面量</h1><div class="content"><p>【摘要】Java语言是静态类型的，也就是说所有变量和表达式的类型在编译时就已经完全确定。</p>
+<a id="more"></a>
+
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>记得之前学这一块的时候，老师告诉我们“数据类型”不只是“数据类型”而是“数据”和“类型”，叫我们好好体会~<br>直到今天我还在假装明白~ </p>
+<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><p>废话不多说，在Java中数据类型分为两大类：基本类型和对象类型。</p>
+<h2 id="基本类型-8种"><a href="#基本类型-8种" class="headerlink" title="基本类型(8种)"></a>基本类型(8种)</h2><table>
+<thead>
+<tr>
+<th align="center">类型</th>
+<th align="center">占用字节</th>
+<th>取值范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">byte</td>
+<td align="center">1个字节</td>
+<td>[-128,+127]</td>
+</tr>
+<tr>
+<td align="center">short</td>
+<td align="center">2个字节</td>
+<td>[-32,768，+32,767]</td>
+</tr>
+<tr>
+<td align="center">int</td>
+<td align="center">4个字节</td>
+<td>[-2,147,483,648，+2,147,483,647] [-2^31,+2^31-1]</td>
+</tr>
+<tr>
+<td align="center">long</td>
+<td align="center">8个字节</td>
+<td>[-2^63,+2^63-1] 10^19</td>
+</tr>
+<tr>
+<td align="center">char</td>
+<td align="center">2个字节</td>
+<td>一种特殊的整数，范围同short</td>
+</tr>
+<tr>
+<td align="center">double</td>
+<td align="center">8个字节</td>
+<td>10^308</td>
+</tr>
+<tr>
+<td align="center">float</td>
+<td align="center">4个字节</td>
+<td>10^38</td>
+</tr>
+<tr>
+<td align="center">boolean</td>
+<td align="center">1个字节</td>
+<td>只有2个值，true和false</td>
+</tr>
+</tbody></table>
+<ul>
+<li>在Java中，最高位代表符号位，1位负，0为正。以8位二进制为例，所以：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">二进制</th>
+<th align="center">十进制</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">0 000 0000</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">0 111 1111</td>
+<td align="center">+127</td>
+</tr>
+<tr>
+<td align="center">1 000 0000</td>
+<td align="center">-128</td>
+</tr>
+<tr>
+<td align="center">1 111 1111</td>
+<td align="center">-1</td>
+</tr>
+</tbody></table>
+<h2 id="对象类型"><a href="#对象类型" class="headerlink" title="对象类型"></a>对象类型</h2><p>所有不是基本类型的都是对象类型，如：String、System…所以，我们编写程序，也就是不断地创建类型。因为我们想表达我们要表达的数据。</p>
+<h1 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h1><p>变量，variable，是一种可以变化的量。<br>语法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">数据类型 变量名 [= 初始值];			[]代表可以省略</span><br><span class="line">变量名，由字母、数字、_组成，并且不能以数字开头。</span><br><span class="line">如：i,a,ai,haha,a5...</span><br><span class="line"></span><br><span class="line">注：给变量命名时尽肯能地有意义[见名知意]</span><br><span class="line"></span><br><span class="line">如：定义一个变量来存储年龄</span><br><span class="line"><span class="keyword">int</span> age;<span class="comment">//变量没有初始化</span></span><br><span class="line">age = <span class="number">10</span>;<span class="comment">//给变量赋值</span></span><br><span class="line"></span><br><span class="line">以上两行语句也可以合在一起：</span><br><span class="line"><span class="keyword">int</span> age = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//定义一个长整型变量，并初始化为100.</span></span><br><span class="line"><span class="keyword">long</span> a = <span class="number">100L</span>; <span class="comment">//长整型字面量以L或l结尾</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//定义一个浮点数变量</span></span><br><span class="line"><span class="keyword">double</span> height = <span class="number">176.5</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//单精度浮点</span></span><br><span class="line"><span class="keyword">float</span> weight = <span class="number">68.5F</span>;<span class="comment">//以F或f结尾</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h1><p>常量[literal]，是不变的变量。<br>语法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> 数据类型 常量名 = 初始值;</span><br><span class="line">如：</span><br><span class="line"><span class="keyword">int</span> i = <span class="number">100</span>;</span><br><span class="line">i = <span class="number">90</span>;<span class="comment">//ok</span></span><br><span class="line"><span class="keyword">final</span> <span class="keyword">int</span> J =  <span class="number">200</span>;<span class="comment">//常量</span></span><br><span class="line">J = <span class="number">230</span>；<span class="comment">//error</span></span><br><span class="line">注：</span><br><span class="line">常量名一般采用大写字母。</span><br><span class="line">如：</span><br><span class="line"><span class="keyword">final</span> String MSG = <span class="string">"hahaha"</span>;</span><br></pre></td></tr></table></figure>
+
+<h1 id="字面量"><a href="#字面量" class="headerlink" title="字面量"></a>字面量</h1><p>字面量[constant]，“双引号括起来的”，就是字面本身的量。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">只有<span class="number">8</span>种基本类型以及字符串String才有字面量。</span><br><span class="line">如：<span class="number">1</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">100L</span>，<span class="keyword">true</span>,<span class="keyword">false</span>,<span class="string">'a'</span>,<span class="string">"abc"</span>;</span><br><span class="line"></span><br><span class="line">作用：用来给变量或者常量赋值。</span><br></pre></td></tr></table></figure>
+
+<h1 id="相关知识"><a href="#相关知识" class="headerlink" title="相关知识"></a>相关知识</h1><h2 id="了解计算机存储数据的方式"><a href="#了解计算机存储数据的方式" class="headerlink" title="了解计算机存储数据的方式"></a>了解计算机存储数据的方式</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">计算机存储数据的方式采用二进制【由<span class="number">0</span>和<span class="number">1</span>组成】</span><br><span class="line">规定每<span class="number">8</span>位为一个字节。</span><br><span class="line">这样，<span class="number">1</span>个字节所能表达的状态有：<span class="number">2</span>^<span class="number">8</span>=<span class="number">256</span> 种</span><br></pre></td></tr></table></figure>
+
+<h2 id="有关字符的表达方式"><a href="#有关字符的表达方式" class="headerlink" title="有关字符的表达方式"></a>有关字符的表达方式</h2><p>在Java中，字符使用单引号括起来，它有如下三种表达方式：<br>A.普通表达方式，每对单引号中只能有唯一的字符</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> c1 = <span class="string">'t'</span>;</span><br></pre></td></tr></table></figure>
+<p>B.特殊字符表达式[使用转义符转义过的]</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> c3 = <span class="string">'\t'</span>;<span class="comment">//制表符</span></span><br><span class="line">这类特殊字符有：</span><br><span class="line"><span class="string">'\r'</span>	回车</span><br><span class="line"><span class="string">'\n'</span>	换行</span><br><span class="line"><span class="string">'\''</span>	单引号</span><br><span class="line"><span class="string">'\\'</span>	反斜杠</span><br><span class="line"><span class="string">'\"'</span>	双引号</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>C.采用<code>UNICODE</code>字符表示法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">语法：<span class="string">'\u 4位16进制表示法'</span></span><br><span class="line">如：</span><br><span class="line"><span class="keyword">char</span> c1 = <span class="string">'我'</span>;</span><br><span class="line">改成unicode表示法：</span><br><span class="line"><span class="keyword">char</span> c1 = <span class="string">'\u6211'</span>;</span><br><span class="line">通过jdk提供的 native2ascii.exe命令可以把任意的中文转换成unicode字符码</span><br><span class="line">ctrl + C 退出</span><br></pre></td></tr></table></figure>
+
+<p>字符是一种特殊的整数。<br>Java采用双字节编码，就意味着它可以表达 2 ^ 16 = 65536 个字符</p>
+<p>在计算机中，要存储字符，都需要把字符转换成整数，进而成为二进制。这就需要字符映射表，也就是码表【字符集表】。<br>计算机中最原始的字符集是<code>ASCII码表</code>，不同的码表对字符的码表是不一样的，其中，<code>ASCII码表</code>采用单字节编码，也就是它最多可编256个字符。</p>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>码值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>‘a’</td>
+<td>97</td>
+</tr>
+<tr>
+<td>‘z’</td>
+<td>122</td>
+</tr>
+<tr>
+<td>‘A’</td>
+<td>65</td>
+</tr>
+<tr>
+<td>‘Z’</td>
+<td>90</td>
+</tr>
+<tr>
+<td>‘0’</td>
+<td>48</td>
+</tr>
+<tr>
+<td>‘9’</td>
+<td>57</td>
+</tr>
+</tbody></table>
+<p>中文字符集采用双字节编码，但是，为了向上兼容<code>ASCII</code>码值，前256的值与<code>ASCII</code>码一模一样，这样就兼容了<code>ASCII码表</code>。【所有主流的字符集都会无条件向上兼容<code>ASCII码表</code>】<br>中文字符集：<br>    <code>GB2312</code>-&gt;<code>GBK</code><br>全球统一的字符集：<br>    <code>UTF-8</code>    [支持中文]，它采用动态编码技术。</p>
+<p>所以，当文本文件的编解码不一致时，就会产生乱码。</p>
+<h2 id="类型转换问题"><a href="#类型转换问题" class="headerlink" title="类型转换问题"></a>类型转换问题</h2><ul>
+<li><p>隐式类型转换<br>当小范围变量、字面量赋值给大范围变量时发生。如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">byte</span> b1 = <span class="number">12</span>;</span><br><span class="line"><span class="keyword">int</span> i = b1;<span class="comment">//ok</span></span><br><span class="line"><span class="keyword">char</span> c = <span class="string">'a'</span>;</span><br><span class="line">i = c;<span class="comment">//ok，结果是 97</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>显示类型转换【强制类型转换】<br>当大范围变量、字面量赋值给小范围变量时发生。<br>语法：(新类型）变量或者表达式或者字面量</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">97</span>;</span><br><span class="line"><span class="keyword">char</span> c = i;<span class="comment">//error,有可能丢失精度</span></span><br><span class="line"><span class="keyword">char</span> c = (<span class="keyword">char</span>)i;<span class="comment">//ok,做了强制类型转换</span></span><br></pre></td></tr></table></figure>
+<h1 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h1></li>
+</ul>
+<p>尽量不要用记事本去存储<code>UTF-8</code>格式的文件。谢谢您的阅读！</p>
+</div><div class="article-tags size-small mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/JavaSE/">JavaSE</a></div><div class="sharethis-inline-share-buttons"></div><script src="https://platform-api.sharethis.com/js/sharethis.js#property=5ef7656a652f9d001303a427&amp;product=inline-share-buttons&amp;cms=sop" defer></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button is-info donate"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="/gallery/donate/alipay.jpg" alt="支付宝"></span></a><a class="button is-warning donate" onclick="document.getElementById(&#039;paypal-donate-form&#039;).submit()"><span class="icon is-small"><i class="fab fa-paypal"></i></span><span>Paypal</span></a><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" rel="noopener" id="paypal-donate-form"><input type="hidden" name="cmd" value="_donations"><input type="hidden" name="business" value="zhangyao9707@163.com"><input type="hidden" name="currency_code" value="USD"></form><a class="button is-success donate"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/gallery/donate/wechat.jpg" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/javase/java-operator-experssion-branch-loop.html"><i class="level-item fas fa-chevron-left"></i><span class="level-item">运算符-表达式-分支语句-循环语句</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/javase/code-package-import-comment.html"><span class="level-item">代码结构-软件包-导入语句-注释</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div id="comment-container"></div><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.6.2/gitalk.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.6.2/gitalk.min.js"></script><script>var gitalk = new Gitalk({
+            id: 'b9a47ba5b3b2aeff5156cd859f7505a5',
+            repo: 'aizhangyao.github.io',
+            owner: 'aizhangyao',
+            clientID: '872c6e0704b3561faaca',
+            clientSecret: '218979ed7b4abf1e403c79184e02808978a42558',
+            admin: ["aizhangyao"],
+            createIssueManually: false,
+            distractionFreeMode: false,
+            perPage: 20,
+            pagerDirection: 'last',
+            
+            
+            enableHotKey: true
+        })
+        gitalk.render('comment-container')</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/img/avatar.jpg" alt="ZhangYao"></figure><p class="title is-size-4 is-block line-height-inherit">ZhangYao</p><p class="is-size-6 is-block">Java Programmer</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Shanghai, China</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">64</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">17</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">20</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/aizhangyao" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/aizhangyao"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Dribbble" href="https://dribbble.com"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><div class="card widget" id="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="is-flex" href="#前言"><span class="mr-2">1</span><span>前言</span></a></li><li><a class="is-flex" href="#数据类型"><span class="mr-2">2</span><span>数据类型</span></a><ul class="menu-list"><li><a class="is-flex" href="#基本类型-8种"><span class="mr-2">2.1</span><span>基本类型(8种)</span></a></li><li><a class="is-flex" href="#对象类型"><span class="mr-2">2.2</span><span>对象类型</span></a></li></ul></li><li><a class="is-flex" href="#变量"><span class="mr-2">3</span><span>变量</span></a></li><li><a class="is-flex" href="#常量"><span class="mr-2">4</span><span>常量</span></a></li><li><a class="is-flex" href="#字面量"><span class="mr-2">5</span><span>字面量</span></a></li><li><a class="is-flex" href="#相关知识"><span class="mr-2">6</span><span>相关知识</span></a><ul class="menu-list"><li><a class="is-flex" href="#了解计算机存储数据的方式"><span class="mr-2">6.1</span><span>了解计算机存储数据的方式</span></a></li><li><a class="is-flex" href="#有关字符的表达方式"><span class="mr-2">6.2</span><span>有关字符的表达方式</span></a></li><li><a class="is-flex" href="#类型转换问题"><span class="mr-2">6.3</span><span>类型转换问题</span></a></li></ul></li><li><a class="is-flex" href="#结束语"><span class="mr-2">7</span><span>结束语</span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button is-primary" type="submit" value="订阅"></div></div><p class="help">Subscribe to get the lastest update!</p></form></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/categories/Algorithm/"><span class="level-start"><span class="level-item">Algorithm</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Blog/"><span class="level-start"><span class="level-item">Blog</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Business/"><span class="level-start"><span class="level-item">Business</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/CataLog/"><span class="level-start"><span class="level-item">CataLog</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/DLMS/"><span class="level-start"><span class="level-item">DLMS</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Git/"><span class="level-start"><span class="level-item">Git</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Hello-World/"><span class="level-start"><span class="level-item">Hello World</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/JDBC/"><span class="level-start"><span class="level-item">JDBC</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/JavaSE/"><span class="level-start"><span class="level-item">JavaSE</span></span><span class="level-end"><span class="level-item tag">30</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Linux/"><span class="level-start"><span class="level-item">Linux</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/MarkDown/"><span class="level-start"><span class="level-item">MarkDown</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Python/"><span class="level-start"><span class="level-item">Python</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/ShopMall/"><span class="level-start"><span class="level-item">ShopMall</span></span><span class="level-end"><span class="level-item tag">12</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/redis/"><span class="level-start"><span class="level-item">redis</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"><span class="level-start"><span class="level-item">多线程</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"><span class="level-start"><span class="level-item">数据结构</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/%E6%9D%82%E8%AE%B0/"><span class="level-start"><span class="level-item">杂记</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></div></div></div><div class="column-right-shadow is-hidden-widescreen"></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="ZhangYao&#039;s Blog" height="28"></a><p class="size-small"><span>&copy; 2018 - 2020 ZhangYao</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span>©版权说明:本网站所有内容均收集于互联网或自己创作,方便于网友与自己学习交流,如有侵权,请留言,立即处理.</span><script type="text/javascript" src="https://v1.cnzz.com/z_stat.php?id=1279030921&amp;web_id=1279030921"></script><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            site: {
+                url: 'http://www.aizhangyao.com',
+                external_link: {"enable":true,"exclude":[]}
+            },
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" defer></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><script src="https://s9.cnzz.com/z_stat.php?id=1279030921&amp;web_id=1279030921" async></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.8/js/lightgallery.min.js" defer></script><script src="https://cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.7.0/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=5ef7656a652f9d001303a427&amp;product=inline-share-buttons&amp;cms=sop" async="async"></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
